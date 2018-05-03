@@ -1,11 +1,8 @@
-Bootstrap: yum
-OSVersion: 7
-MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
-Include: yum
+Bootstrap: shub
+From: ISU-HPC/centos7-base
 
 %help
-Maker
-Documentation: http://www.yandell-lab.org/software/maker.html
+CentOS 7 with base perl and CPAN
 
 
 %labels
@@ -14,14 +11,12 @@ Documentation: http://www.yandell-lab.org/software/maker.html
 
 
 %setup
-    #touch ${SINGULARITY_ROOTFS}/maker-2.31.9.tgz
 
 
 %files
-    #maker-2.31.9.tgz /maker-2.31.9.tgz
 
 
 %post
     # Install Perl prerequisites
     yum install -y perl perl-CPAN
-    #cpan DBI DBD::SQLite forks forks::shared File::Which Perl::Unsafe::Signals Big::Vector Inline::C IO::All IO::Prompt
+
