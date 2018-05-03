@@ -18,5 +18,5 @@ CentOS 7 with base perl and CPAN
 
 %post
     # Install Perl prerequisites
-    yum install -y perl perl-CPAN
+    yum install -y perl perl-CPAN perl-App-cpanminus perl-Archive-Tar
 
